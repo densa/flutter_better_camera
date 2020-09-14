@@ -837,6 +837,10 @@ public class Camera {
 
     try {
       recordingVideo = false;
+      
+      mCaptureSession.stopRepeating();
+      mCaptureSession.abortCaptures();
+      
       mediaRecorder.stop();
       mediaRecorder.reset();
       startPreview();
